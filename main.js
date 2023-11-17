@@ -28,7 +28,7 @@ for(let i= 0; i < imgArray.length; i++){
     // aggiungo la classe item a div
     item.classList.add('item');
     // aggiungo l'immagine a div
-    item.innerHTML += `<img src="../img/${imgArray[i]}" alt="img.1" />`;
+    item.innerHTML += `<img src="./img/${imgArray[i]}" alt="img.1" />`;
 
     if(i === actualImg){
         item.classList.add('active');
@@ -44,6 +44,7 @@ for(let i= 0; i < rightArray.length; i++){
     const rightBox = document.createElement('div');
      // aggiungo la classe right-box a div
      rightBox.classList.add('right-box', 'gray-scale');
+     
      // aggiungo l'immagine a div
      rightBox.innerHTML += `<img src="../img/${imgArray[i]}" alt="img.1" />`;
     
@@ -56,8 +57,13 @@ console.log(allItem);
 
 function switchOn(){
 
-    if(actualImg < imgArray.length -1){
+    if(actualImg < imgArray.length - 1){
         console.log(`array ${imgArray.length}`);
+
+        if(actualImg === 0){
+
+            allRightBox[actualImg].classList.remove('gray-scale');
+        }
 
         allRightBox[actualImg].classList.remove('gray-scale');  //remove gray-scale
         // rimuovi classe active per vedere foto
@@ -84,5 +90,4 @@ function switchOn(){
 
 }
 
-let scorrimento;
-scorrimento = setInterval(switchOn, 3000);
+let scorrimento = setInterval(switchOn, 3000);
