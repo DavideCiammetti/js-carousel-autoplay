@@ -4,18 +4,7 @@
 //<div class="right-box">
 //<img src="../img/02.jpg" alt="img.2" />
 // </div>
-// <div class="right-box">
-//<img src="../img/02.jpg" alt="img.2" />
-// </div>
-// <div class="right-box">
-//<img src="../img/02.jpg" alt="img.2" />
-// </div>
-// <div class="right-box">
- //<img src="../img/02.jpg" alt="img.2" />
-// </div>
-// <div class="right-box">
-//<img src="../img/02.jpg" alt="img.2" />
-// </div>
+
 
 // variabili della parte di destra
 const rightContainer = document.querySelector('.right-container');  
@@ -65,9 +54,8 @@ const allRightBox = document.querySelectorAll('.right-box');
 const allItem = document.querySelectorAll('.item');
 console.log(allItem);
 
-// creo evento per premere pulsante in alto
-tastoAlto.addEventListener('click', function() {
-    console.log(actualImg);
+function switchOn(){
+
     if(actualImg < imgArray.length -1){
         console.log(`array ${imgArray.length}`);
 
@@ -93,34 +81,8 @@ tastoAlto.addEventListener('click', function() {
         allItem[actualImg].classList.add('active');
         allRightBox[actualImg].classList.remove('gray-scale');  //remove gray-scale
     }
-     
-});
 
-// creo evento per premere pulsante in basso
-tastoBasso.addEventListener('click', function() {
-    console.log(`immagine attuale ${imgArray.actualImg}`);
-    if(actualImg > 0){
+}
 
-        allRightBox[actualImg].classList.remove('gray-scale');  //add gray-scale
-         // remove classe active per vedere foto
-        allItem[actualImg].classList.remove('active');
-        allRightBox[actualImg].classList.add('gray-scale');  //remove gray-scale
-        actualImg--;
-         // aggiungi classe active per vedere foto
-        allItem[actualImg].classList.add('active');
-        allRightBox[actualImg].classList.remove('gray-scale');  //add gray-scale
-
-    }else if(actualImg <= 0){
-        allRightBox[actualImg].classList.add('gray-scale');  //remove gray-scale
-         // remove classe active per vedere foto
-        allItem[actualImg].classList.remove('active');
-        // riporo a 0 la variabile da incrementare 
-        actualImg = 4;
-         // riporo a 0 l'array
-        imgArray.length = 0;
-        // aggiungi classe active per vedere foto
-        allItem[actualImg].classList.add('active');
-        allRightBox[actualImg].classList.remove('gray-scale');  //add gray-scale
-    }
-
-});
+let scorrimento;
+scorrimento = setInterval(switchOn, 3000);
