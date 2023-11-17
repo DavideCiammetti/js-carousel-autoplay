@@ -97,3 +97,19 @@ body{
 .gray-scale{
     filter: grayscale(1);
 }
+
+.button{
+ position: absolute;
+ bottom: 50%;
+ left: 80px;
+}
+.button-start-stop{
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.button-stop-container{
+    position: absolute;
+    bottom: 38%;
+    left: 80px;
+}

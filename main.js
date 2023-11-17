@@ -36,7 +36,6 @@ for(let i= 0; i < imgArray.length; i++){
 
     items.append(item);
 }
-
 // parte di destra foto piccole
 for(let i= 0; i < rightArray.length; i++){
 
@@ -56,7 +55,6 @@ const allItem = document.querySelectorAll('.item');
 console.log(allItem);
 
 function switchOn(){
-
     if(actualImg < imgArray.length - 1){
         console.log(`array ${imgArray.length}`);
 
@@ -65,6 +63,7 @@ function switchOn(){
             allRightBox[actualImg].classList.remove('gray-scale');
         }
 
+        console.log(actualImg);
         allRightBox[actualImg].classList.remove('gray-scale');  //remove gray-scale
         // rimuovi classe active per vedere foto
         allItem[actualImg].classList.remove('active');
@@ -90,4 +89,13 @@ function switchOn(){
 
 }
 
-let scorrimento = setInterval(switchOn, 3000);
+const buttonStop = document.querySelector('.button-stop-container');
+const buttonStart = document.querySelector('.button');
+let scorrimento;
+buttonStart.addEventListener('click', function(){
+     scorrimento = setInterval(switchOn, 3000);
+});
+
+buttonStop.addEventListener('click', function(){
+    clearInterval(scorrimento);
+});

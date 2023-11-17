@@ -9,3 +9,6 @@ per inserire un timer che da solo possa far cambiare le immagini innanzi tutto d
 1. togliere pulzanti scorrimento
 
 poi posso pensare la fatto che tutto deve avvenire in automatico quindi utilizzero la funzione 
+
+BONUS:
+Aggiungere bottoni di start / stop.
