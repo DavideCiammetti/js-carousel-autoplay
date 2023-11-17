@@ -28,7 +28,7 @@ for(let i= 0; i < imgArray.length; i++){
     // aggiungo la classe item a div
     item.classList.add('item');
     // aggiungo l'immagine a div
-    item.innerHTML += `<img src="./img/${imgArray[i]}" alt="img.1" />`;
+    item.innerHTML += `<img src="img/${imgArray[i]}" alt="img.1" />`;
 
     if(i === actualImg){
         item.classList.add('active');
@@ -46,7 +46,7 @@ for(let i= 0; i < rightArray.length; i++){
      rightBox.classList.add('right-box', 'gray-scale');
      
      // aggiungo l'immagine a div
-     rightBox.innerHTML += `<img src="../img/${imgArray[i]}" alt="img.1" />`;
+     rightBox.innerHTML += `<img src="img/${imgArray[i]}" alt="img.1" />`;
     
      rightContainer.append(rightBox);
  }
